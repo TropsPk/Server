@@ -15,7 +15,7 @@ env:
   KERNEL_SOURCE : "https://github.com/crdroidandroid/android_kernel_oneplus_sm8250.git"
   KERNEL_BRANCH : "16.0" # active branch (crDroid 16 / Android 16, kernel 4.19.325). NOT "16.0-instantnoodle" - that branch is a stale 2020 snapshot.
 
-  CLANG_SOURCE : "https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.2/LLVM-22.1.2-Linux-X64.tar.xz"
+  CLANG_SOURCE : "https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/LLVM-19.1.7-Linux-X64.tar.xz"
   CLANG_BRANCH : ""
 
   GCC_GNU : false
@@ -92,7 +92,7 @@ env:
 jobs:
   build-kernel:
     name: Build Kernel
-    runs-on: ubuntu-latest
+    runs-on: ubuntu 22.04
     env:
       CCACHE_COMPILERCHECK: "%compiler% -dumpmachine; %compiler% -dumpversion"
       CCACHE_NOHASHDIR: "true"
