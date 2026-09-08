@@ -35,7 +35,7 @@ env:
   KERNELSU_AUTO_GET : "true"
   KERNELSU_AUTO_FORK : "resukisu" # matches the fork used in your other OP8 builds
 
-  SUSFS_ENABLE : true
+  SUSFS_ENABLE : false
   SUSFS_FIXED : false # set true + fill PATCHES_SOURCE/SUSFS_FOLDER_FIXED/SUSFS_PATCH_FIXED if this kernel needs a secondary SUSFS fixup patch
 
   AK3_SOURCE : "https://github.com/osm0sis/AnyKernel3.git"
