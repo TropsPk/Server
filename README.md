@@ -14,7 +14,7 @@
 
 ### Introduction
 
-The initial goal of this project was to provide a relatively stable channel for compiling and updating **KernelSU** and **SuSFS** for a wider range of **Non-GKI** kernels.  
+The initial of this project was to provide a relatively stable channel for compiling and updating **KernelSU** and **SuSFS** for a wider range of **Non-GKI** kernels.  
 It also aims to provide an easier compilation process using **GitHub Actions**, which not only makes it easier for us to maintain but also you to use our project to compile your own kernels.  
 
 
