@@ -1,4 +1,4 @@
-name: Build OnePlus 8 Series (OxygenOS 13 A13) (Meteoric Kernel)
+name: Build OnePlus 8 Series (OxygenOS 13 A13)
 
 on:
   workflow_call:
@@ -12,8 +12,8 @@ env:
   CUSTOM_CMDS : "BRAND_SHOW_FLAG=oneplus CLANG_TRIPLE=aarch64-linux-gnu-"
   EXTRA_CMDS : "LD=ld.lld"
 
-  KERNEL_SOURCE : "https://github.com/HELLBOY017/kernel_oneplus_sm8250.git"
-  KERNEL_BRANCH : "14"
+  KERNEL_SOURCE : "https://github.com/TropsPk/kernel_oneplus_sm8250.git"
+  KERNEL_BRANCH : "oos13.1-merged"
 
   CLANG_SOURCE : "https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/LLVM-19.1.7-Linux-X64.tar.xz"
   CLANG_BRANCH : ""
@@ -25,7 +25,7 @@ env:
   GCC_32_BRANCH : "arm32"
 
   DEFCONFIG_SOURCE: ""
-  DEFCONFIG_NAME : "vendor/Meteoric_defconfig"
+  DEFCONFIG_NAME : "vendor/kona-perf_defconfig"
   DEFCONFIG_ORIGIN_IMAGE: ""
   DEFCONFIG_FROM_BOOT: false
 
@@ -91,7 +91,7 @@ env:
 
 jobs:
   build-kernel:
-    name: OnePlus 8 Series (OxygenOS 13 A13) (Meteoric Kernel)
+    name: OnePlus 8 Series (OxygenOS 13 A13)
     runs-on: ubuntu-22.04
     env:
       CCACHE_COMPILERCHECK: "%compiler% -dumpmachine; %compiler% -dumpversion"
@@ -107,14 +107,6 @@ jobs:
 
       - name: ⚙️ Get necessary tools
         uses: ./.github/workflows/build-ready
-
-      - name: 🪛 Set Meteoric Kernel Branding
-        run: |
-          cd $GITHUB_WORKSPACE/device_kernel
-          # Set Meteoric branding and disable auto git hash/dirty tags
-          sed -i '/CONFIG_LOCALVERSION=/d' ./arch/arm64/configs/${{ env.DEFCONFIG_NAME }}
-          echo 'CONFIG_LOCALVERSION="-Meteoric"' >> ./arch/arm64/configs/${{ env.DEFCONFIG_NAME }}
-          echo 'CONFIG_LOCALVERSION_AUTO=n' >> ./arch/arm64/configs/${{ env.DEFCONFIG_NAME }}
 
       - name: 🚀 Build Process
         uses: ./.github/workflows/build-process
