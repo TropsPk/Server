@@ -34,7 +34,7 @@ env:
 
   # FIX: Fetch the files to bypass the hardcoded folder crash
   KERNELSU_AUTO_GET : "true"
-  KERNELSU_AUTO_FORK : "bakusu"
+  KERNELSU_AUTO_FORK : "bakausu"
 
   SUSFS_ENABLE : false
   SUSFS_FIXED : false
