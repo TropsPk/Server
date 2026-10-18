@@ -56,7 +56,7 @@ env:
   PACK_KMODULES: "false"
 
   # FIX: "only" skips compiling KSU into the kernel, keeping it disabled but satisfying the script
-  KERNELSU_METHOD: "shell"
+  KERNELSU_METHOD: "only"
 
   PATCHES_SOURCE: ""
   PATCHES_BRANCH: ""
