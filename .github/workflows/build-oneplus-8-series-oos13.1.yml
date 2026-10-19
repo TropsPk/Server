@@ -36,7 +36,7 @@ env:
   KERNELSU_AUTO_GET : "true"
   KERNELSU_AUTO_FORK : "bakasu"
 
-  SUSFS_ENABLE : false
+  SUSFS_ENABLE : true
   SUSFS_FIXED : false
 
   AK3_SOURCE : "https://github.com/JackA1ltman/OP8_AnyKernel3.git"
@@ -55,8 +55,7 @@ env:
   PACK_METHOD: "AnyKernel3"
   PACK_KMODULES: "false"
 
-  # FIX: "only" skips compiling KSU into the kernel, keeping it disabled but satisfying the script
-  KERNELSU_METHOD: "only"
+  KERNELSU_METHOD: "shell"
 
   PATCHES_SOURCE: ""
   PATCHES_BRANCH: ""
@@ -81,7 +80,7 @@ env:
   GENERATE_DTB: "false"
   GENERATE_CHIP: "qcom"
 
-  BUILD_DEBUGGER: "false"
+  BUILD_DEBUGGER: "true"
   SKIP_PATCH: "false"
 
   BUILD_OTHER_CONFIG: "true"
@@ -107,6 +106,12 @@ jobs:
 
       - name: ⚙️ Get necessary tools
         uses: ./.github/workflows/build-ready
+
+      - name: 🪝 Patch Kernel of SUSFS
+        uses: ./.github/workflows/patch-susfs
+
+      - name: 🔗 Patch for no-kprobe
+        uses: ./.github/workflows/patch-no-kprobe
 
       - name: 🚀 Build Process
         uses: ./.github/workflows/build-process
