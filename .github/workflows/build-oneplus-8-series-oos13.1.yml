@@ -65,7 +65,7 @@ env:
 
   REKERNEL_ENABLE: "false"
   DROIDSPACES_ENABLE: "false"
-  NOMOUNT_ENABLE: "false"
+  NOMOUNT_ENABLE: "true"
 
   HOOK_METHOD: "syscall"
 
@@ -112,6 +112,9 @@ jobs:
 
       - name: 🔗 Patch for no-kprobe
         uses: ./.github/workflows/patch-no-kprobe
+
+      - name: 🛡️ Patch Kernel of NoMount
+        uses: ./.github/workflows/patch-nomount
 
       - name: 🚀 Build Process
         uses: ./.github/workflows/build-process
