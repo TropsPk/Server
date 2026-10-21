@@ -148,7 +148,7 @@ runs:
           fi
 
       - name: Upload Build Patch Rejected Files
-        if: env.BUILD_DEBUGGER == 'true'
+        if: always() && env.BUILD_DEBUGGER == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: patch_rejected_files
