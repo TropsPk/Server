@@ -61,7 +61,7 @@ env:
   PATCHES_BRANCH: ""
 
   SUSFS_FOLDER_FIXED: ""
-  SUSFS_PATCH_FIXED: "susfs_fix_4.19.157"
+  SUSFS_PATCH_FIXED: ""
 
   REKERNEL_ENABLE: "false"
   DROIDSPACES_ENABLE: "false"
@@ -81,7 +81,7 @@ env:
   GENERATE_CHIP: "qcom"
 
   BUILD_DEBUGGER: "true"
-  SKIP_PATCH: "false"
+  SKIP_PATCH: "true"
 
   BUILD_OTHER_CONFIG: "true"
   MERGE_CONFIG_FILES: "vendor/debugfs.config"
