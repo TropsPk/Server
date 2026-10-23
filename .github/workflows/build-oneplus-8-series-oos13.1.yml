@@ -13,7 +13,7 @@ env:
   EXTRA_CMDS : ""
 
   KERNEL_SOURCE : "https://github.com/TropsPk/kernel_oneplus_sm8250.git"
-  KERNEL_BRANCH : "pro"
+  KERNEL_BRANCH : "oos13.1"
 
   CLANG_SOURCE : "https://github.com/ZyCromerZ/Clang/releases/download/10.0.1-20220724-release/Clang-10.0.1-20220724.tar.gz"
   CLANG_BRANCH : ""
