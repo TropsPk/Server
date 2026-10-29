@@ -12,8 +12,8 @@ env:
   CUSTOM_CMDS : "BRAND_SHOW_FLAG=oneplus CROSS_COMPILE=aarch64-linux-gnu- NM=llvm-nm OBJDUMP=llvm-objdump STRIP=llvm-strip"
   EXTRA_CMDS : ""
 
-  KERNEL_SOURCE : "https://github.com/TropsPk/kernel_oneplus_sm8250.git"
-  KERNEL_BRANCH : "oos13.1"
+  KERNEL_SOURCE : "https://github.com/TropsPk/Tropsi_X_Kernel_SM8250"
+  KERNEL_BRANCH : "Staging"
 
   CLANG_SOURCE : "https://github.com/ZyCromerZ/Clang/releases/download/10.0.1-20220724-release/Clang-10.0.1-20220724.tar.gz"
   CLANG_BRANCH : ""
